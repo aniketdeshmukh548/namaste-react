@@ -10,6 +10,8 @@
 </div> */
 
 //----------------------create above structure using react
+import React from "react";
+import ReactDOM  from "react-dom/client";
 //The below code is the core react code but html is easy so we use JSX instead of core react
 const heading=React.createElement(('div'),{id:'parent'},
     [(React.createElement(('div'),{id:'child'},(
