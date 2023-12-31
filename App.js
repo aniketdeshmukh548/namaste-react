@@ -936,11 +936,151 @@ const Body=()=>{
         </div>
     )
 }
+
+const newsList=[{
+  "source": {
+    "id": null,
+    "name": "Biztoc.com"
+  },
+  "author": "investorplace.com",
+  "title": "Cross-Border Champions: 3 Stocks Excelling in International Markets",
+  "description": "While isolationism and nationalism appear to be rising themes in global politics, with the investing game, diversity is a core strength, thus boosting the narrative of international stocks. Fundamentally, going abroad for profits may provide risk management. …",
+  "url": "https://biztoc.com/x/c4c85ef34dcdecd1",
+  "urlToImage": "https://c.biztoc.com/p/c4c85ef34dcdecd1/s.webp",
+  "publishedAt": "2023-12-30T06:06:08Z",
+  "content": "While isolationism and nationalism appear to be rising themes in global politics, with the investing game, diversity is a core strength, thus boosting the narrative of international stocks. Fundament… [+276 chars]"
+},
+{
+  "source": {
+    "id": null,
+    "name": "Marketscreener.com"
+  },
+  "author": null,
+  "title": "REUTERS-SCHEDULE/…",
+  "description": "(marketscreener.com) \n Here are the top stories and upcoming coverage plans for Reuters\ntext service as of 0600 GMT/ 0100 ET. For a full schedule of\nnews and events, go to our editorial calendar on Reuters Connect\nor on Media Express.\n \n TOP STORIES\n \n GLOBAL…",
+  "url": "https://www.marketscreener.com/news/latest/REUTERS-SCHEDULE--45652372/",
+  "urlToImage": "https://www.marketscreener.com/images/twitter_MS_fdblanc.png",
+  "publishedAt": "2023-12-30T06:00:12Z",
+  "content": "Here are the top stories and upcoming coverage plans for Reuters\r\ntext service as of 0600 GMT/ 0100 ET. For a full schedule of\r\nnews and events, go to our editorial calendar on Reuters Connect\r\nor on… [+4662 chars]"
+},
+{
+  "source": {
+    "id": null,
+    "name": "Interia.pl"
+  },
+  "author": "Jan Guss-Gasiński",
+  "title": "Pierwsza Tesla Cybertruck miała wypadek. Młody kierowca miał sporo szczęścia",
+  "description": "Tesla Cybertruck to jeden z najbardziej wyczekiwanych samochodów tego roku. Na elektrycznego pick-upa klienci czekali latami i wreszcie pierwsze egzemplarze zaczęły trafiać do klientów. Krótko po rynkowym debiucie świat obiegła wiadomość o pierwszym wypadku z…",
+  "url": "https://motoryzacja.interia.pl/wiadomosci/wypadki/news-pierwsza-tesla-cybertruck-miala-wypadek-mlody-kierowca-mial-,nId,7238416",
+  "urlToImage": "https://i.iplsc.com/-/000IB3UPNPM3H9TE-C461-F4.jpg",
+  "publishedAt": "2023-12-30T05:57:50Z",
+  "content": "Spis treci:\r\nSie obiegy zdjcia i nagrania z pierwszego wypadku z udziaem Tesli Cybertruck, do którego doszo 28 grudnia w godzinach popoudniowych. Elektryczny pick-up na drodze SR-35 w Kalifornii (Sta… [+2150 chars]"
+},
+{
+  "source": {
+    "id": null,
+    "name": "CleanTechnica"
+  },
+  "author": "Jennifer Sensiba",
+  "title": "Hertz: Not Enough Teslas Are Getting Rented",
+  "description": "A recent video by CNBC takes an in-depth look at a problem Hertz is having: lack of demand for Tesla ... [continued]\nThe post Hertz: Not Enough Teslas Are Getting Rented appeared first on CleanTechnica.",
+  "url": "https://cleantechnica.com/2023/12/30/hertz-not-enough-teslas-are-getting-rented/",
+  "urlToImage": "https://cleantechnica.com/wp-content/uploads/2023/12/Hertz-Rental-Teslas-2000x1000-1.png",
+  "publishedAt": "2023-12-30T05:50:09Z",
+  "content": "Sign up for daily news updates from CleanTechnica on email. Or follow us on Google News!\r\nA recent video by CNBC takes an in-depth look at a problem Hertz is having: lack of demand for Tesla rentals.… [+7011 chars]"
+},
+{
+  "source": {
+    "id": null,
+    "name": "Biztoc.com"
+  },
+  "author": "cnn.com",
+  "title": "Elon Musk and these other 9 bosses had a terrible, horrible, no good, very bad 2023",
+  "description": "For some top executives, 2023 is a year they would rather forget. Some of their companies lost billions of dollars. Some have lost their jobs. And others badly damaged their reputations and face even more trouble ahead in 2024. CNN Business ended the year cel…",
+  "url": "https://biztoc.com/x/f13436461cf2ea6e",
+  "urlToImage": "https://c.biztoc.com/p/f13436461cf2ea6e/og.webp",
+  "publishedAt": "2023-12-30T05:48:25Z",
+  "content": "For some top executives, 2023 is a year they would rather forget.Some of their companies lost billions of dollars. Some have lost their jobs. And others badly damaged their reputations and face even … [+290 chars]"
+},
+{
+  "source": {
+    "id": null,
+    "name": "Typepad.com"
+  },
+  "author": "Michel de Guilhermier",
+  "title": "Bilan Boursier Tech 2023 !",
+  "description": "Sacrée revanche du secteur Tech, le Nasdaq gagnant par exemple 43%, sa meilleure année depuis 20 ans je crois, bien au dessus du Dow Jones (+14%) et du S&P500 (+24%). Pour rappel, en 2022, le Nasdaq avait perdu 33%, le...",
+  "url": "https://micheldeguilhermier.typepad.com/mdegblog/2023/12/bilan-boursier-tech-2023-.html",
+  "urlToImage": "https://micheldeguilhermier.typepad.com/.a/6a00d8341c5bbe53ef02c8d3a6ad18200b-600wi",
+  "publishedAt": "2023-12-30T05:47:50Z",
+  "content": "Sacrée revanche du secteur Tech, le Nasdaq gagnant par exemple 43%, sa meilleure année depuis 20 ans je crois, bien au dessus du Dow Jones (+14%) et du S&amp;P500 (+24%). \r\nPour rappel, en 2022, le N… [+833 chars]"
+},
+{
+  "source": {
+    "id": "cnn",
+    "name": "CNN"
+  },
+  "author": "Ángela Reyes Haczek",
+  "title": "Los trabajadores nórdicos se enfrentaron a Elon Musk en 2023. Esto es lo que podría ocurrir el próximo año",
+  "description": "Lo que empezó hace nueve semanas con un grupo de mecánicos suecos que exigían que Tesla aceptara la negociación colectiva se ha convertido en una lucha más amplia por el modo de trabajo y de vida de la región nórdica.",
+  "url": "https://cnnespanol.cnn.com/2023/12/30/trabajadores-nordicos-elon-musk-2023-trax/",
+  "urlToImage": "https://cnnespanol.cnn.com/wp-content/uploads/2023/11/231124105914-02-elon-musk-sweden.jpg?quality=100&strip=info",
+  "publishedAt": "2023-12-30T05:43:33Z",
+  "content": "Así es la nueva versión de Optimus, el robot humanoide de Tesla 1:29\r\n(CNN) -- Lo que empezó hace nueve semanas con un grupo de mecánicos suecos que exigían que Tesla aceptara la negociación colectiv… [+9049 chars]"
+},
+{
+  "source": {
+    "id": null,
+    "name": "FRANCE 24 English"
+  },
+  "author": "Barbara GABEL",
+  "title": "From Musk and Tusk to Swift: Figures who defined 2023",
+  "description": "From Iran to Hollywood, in the domains of space travel, football and tech, 2023 was a year shaped by strong personalities. Some inspired us, most made us reflect, and others occasionally annoyed us. As the year comes to an end, FRANCE 24 has selected some of …",
+  "url": "https://www.france24.com/en/culture/20231230-from-musk-and-tusk-to-swift-figures-who-defined-2023",
+  "urlToImage": "https://s.france24.com/media/display/c74f1cf4-a592-11ee-9fed-005056bfb2b6/w:1280/p:16x9/Personnalit%C3%A9s%202023-couv%20EN.png",
+  "publishedAt": "2023-12-30T05:34:12Z",
+  "content": "From Iran to Hollywood, in the domains of space travel, football and tech, 2023 was a year shaped by strong personalities. Some inspired us, most made us reflect, and others occasionally annoyed us. … [+11229 chars]"
+},
+{
+  "source": {
+    "id": null,
+    "name": "FRANCE 24 English"
+  },
+  "author": "Barbara GABEL",
+  "title": "Taylor Swift, Elon Musk, Nargès Mohamadi... les 10 personnalités de 2023",
+  "description": "En 2023, l’actualité a été marquée par l’engagement ou le rayonnement de personnalités de tous horizons. Artistes, sportives ou entrepreneurs : France 24 a sélectionné les figures les plus marquantes à travers le monde.",
+  "url": "https://www.france24.com/fr/europe/20231230-taylor-swift-elon-musk-narg%C3%A8s-mohamadi-les-10-personnalit%C3%A9s-de-2023",
+  "urlToImage": "https://s.france24.com/media/display/f886a580-a3ee-11ee-b6e9-005056a90284/w:1280/p:16x9/02-6.png",
+  "publishedAt": "2023-12-30T05:32:44Z",
+  "content": "En 2023, lactualité a été marquée par lengagement ou le rayonnement de personnalités de tous horizons. Artistes, sportives ou entrepreneurs : France 24 a sélectionné les figures les plus marquantes à… [+12337 chars]"
+}]
+const NewsCard=(props)=>{
+    const {newsData}=props;
+  return(
+    <div className="news-card">
+      <h2>{newsData.title}</h2>
+      <h2>{newsData.publishedAt}</h2>
+    </div>
+  )
+}
+const Footer=()=>{
+  console.log(newsList)
+  return(
+    <div className="footer-container">
+      {
+        newsList.map((e)=>(
+          <NewsCard key={e.source.id} newsData={e}/>
+        ))
+      }
+    </div>
+  )
+}
 const AppLayout=()=>{
     return (
         <div className="App">
             <Header />
             <Body />
+            <Footer />
         </div>
     )
 }
