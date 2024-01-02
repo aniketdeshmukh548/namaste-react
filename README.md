@@ -18,3 +18,13 @@
     - HTTPs
     - Tree shaking algo => remove uncessary code (leaves of trees)( e.g. if we are using 4-5 functions so parcel will remove other not useful functions)
     - Diffrent build for dev and production
+
+
+Two types of import / export
+1=DEFAULT
+  - export default componet name;
+  - import comp name from 'path';
+
+2=NAMED
+  - export const comp name;
+  - import {comp name} from 'path';
