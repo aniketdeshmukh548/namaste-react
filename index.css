@@ -87,3 +87,13 @@
 .search-res{
     margin: 5px;
 }
+.error-container{
+    margin-top: 14%;
+    text-align: center;
+}
+.error-container > h3{
+    font-size: 40px;
+}
+.error-container > h2{
+    font-size: 40px;
+}
