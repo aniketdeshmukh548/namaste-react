@@ -16,8 +16,8 @@ const Body=()=>{
       const data=await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.5204303&lng=73.8567437&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
       const json= await data.json()
       console.log(json)
-      setListofres(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-      setfilteredRes(json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants) //added list of res to filteredres
+      setListofres(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+      setfilteredRes(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants) //added list of res to filteredres
     }
     return listofRes.length===0 ? <Shimmer /> : (
         <div className="body">

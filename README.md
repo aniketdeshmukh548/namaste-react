@@ -28,3 +28,7 @@ Two types of import / export
 2=NAMED
   - export const comp name;
   - import {comp name} from 'path';
+
+//REACT LIFECYCLE DIAGRAM LINK AND IMAGE
+https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+  ![Alt text](image.png)
