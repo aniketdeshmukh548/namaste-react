@@ -8,9 +8,7 @@ import useRestaurantData from "../utils/useRestaurantData";
 const Body=()=>{
     const [searchText,setsearchText]=useState('')
     const OnlineStatus=useOnlineStatus();
-    const listofRes=useRestaurantData();
-    const setfilteredRes=useRestaurantData();
-    const filteredRes=useRestaurantData();
+    const {listofRes,setfilteredRes,filteredRes}=useRestaurantData();
     console.log(listofRes,filteredRes)
     console.log('body render')
     if(OnlineStatus===false){
@@ -20,22 +18,23 @@ const Body=()=>{
     }
     return listofRes.length===0 ? <Shimmer /> : (
         <div className="body">
-        <div className="filter-container">
-          <div className="search-res">
-            <input type="text" className="search-box" value={searchText} onChange={(e)=>{
+        <div className="filter flex justify-center">
+          <div className="p-4 m-8 ">
+            <input type="text" placeholder="Search food and restaurants" className='border border-solid border-black w-96 rounded-lg' value={searchText} onChange={(e)=>{
               setsearchText(e.target.value);
             }}/>
-            <button onClick={()=>{
+            <button className="px-4 py-2 m-8 bg-gray-400 rounded-3xl font-semibold" onClick={()=>{
                 const filterRes = listofRes.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase()));
                 setfilteredRes(filterRes);
             }}>Serach</button>
-          </div>
-            <button className="filter-btn" onClick={()=>{
+            <button className="px-4 py-2 m-8 bg-gray-400 rounded-3xl font-semibold" onClick={()=>{
                 const filterList = listofRes.filter((res) => res.info.avgRating > 4.0);
                 setfilteredRes(filterList);
             }}>Top Rated Restaurants (4.0+)</button>
+          </div>
+           
         </div>
-        <div className="res-container">
+        <div className="flex flex-wrap px-32">
           {
             filteredRes.map((e)=>(            
               <Link key={e.info.id} to={'/restaurants/'+e.info.id}><RestaurantCard  resData={e} /></Link>
