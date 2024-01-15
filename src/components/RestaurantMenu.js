@@ -1,59 +1,39 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Shimmer from './Shimmer';
 import { useParams } from 'react-router-dom';
 import useRestaurantMenu from '../utils/useRestaurantMenu';
+import RestaurantCategory from './RestaurantCategory';
+import { CDN_URL } from '../utils/constants';
 
 const RestaurantMenu = () => {
     const {resId}= useParams();
     const resInfo=useRestaurantMenu(resId);
-
+    const [showIndex,setshowIndex]=useState(null)
+    console.log(resInfo)
     if(resInfo===null) return <Shimmer />
-
-   // from GPT
-    let foundCard1;
-    let foundCard2;
-    
-    for (const card of resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards || []) {
-      if (card?.card?.card?.itemCards && card?.card?.card?.title) {
-        foundCard1 = card;
-        break;
-      }
-    }
-    
-    for (const card of resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards || []) {
-      if (card?.card?.card?.itemCards && card?.card?.card?.title && card !== foundCard1) {
-        foundCard2 = card;
-        break;
-      }
-    }
-    
-    const { itemCards: itemCards1, title: title1 } = foundCard1?.card?.card || {};
-    const { itemCards: itemCards2, title: title2 } = foundCard2?.card?.card || {};
-    
-    const {name,cuisines,costForTwoMessage}=resInfo?.cards[0]?.card?.card?.info
-    console.log(itemCards1)
+    const {name,cuisines,costForTwoMessage,areaName,}=resInfo?.cards[0]?.card?.card?.info
+    const {message,icon}=resInfo?.cards[0]?.card?.card?.info.feeDetails
+    const categories=resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c)=>c?.card?.card?.['@type']==="type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
+    //console.log(categories)
+  
   return (
-    <div className='res-menu'>
-        <h2>{name}</h2>
-        <p>{cuisines.join(',')}</p>
-        <p>{costForTwoMessage}</p>
-        <h2>Menu</h2>
-        <h2>{title1 && itemCards1 ? title1 + '(' + itemCards1.length + ')' : 'N/A'}</h2> 
-        {/* made change according to gpt pls verify */}
-        <div className='res-items'>
-        <ul>
-          {/* made change according to gpt pls verify */}
-            {itemCards1 && itemCards1.map((item)=>(
-              <li key={item.card.info.id}>{item.card.info.name}-{'Rs.'}{item.card.info.price/100}</li>
-            ))}
-        </ul>
-        </div>
-          <h2>{title2 && itemCards1 ? title2 + '(' + itemCards2.length + ')' : 'N/A'}</h2>
-          <ul>
-            {itemCards2 && itemCards2.map((item)=>(
-              <li key={item.card.info.id}>{item.card.info.name}-{'Rs.'}{item.card.info.defaultPrice/100||item.card.info.price/100}</li>
-            ))}
-          </ul>
+      <div className='text-center'>
+        <h2 className='font-extrabold my-6 text-2xl'>{name}</h2>
+        <p className=' font-semibold text-xl'>{cuisines.join(',')}</p>
+        <p className=' font-semibold text-xl'>{costForTwoMessage}</p>
+        <p>{areaName}</p>
+        <div className="flex justify-center">
+    <img className='w-6 h-6 mx-1' src={CDN_URL + icon} alt="" />
+    <p className='text-sm'>{message}</p>
+</div>
+      <div>
+         {categories.map((category,index)=>(
+          <RestaurantCategory key={category?.card?.card?.title} data={category?.card?.card}
+          showItems={index===showIndex ? true : false}
+          setshowIndex={()=>setshowIndex(index)} />
+        )
+        )}
+       </div>
     </div>
   )
 }

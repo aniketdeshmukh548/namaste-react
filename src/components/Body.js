@@ -1,14 +1,17 @@
-import RestaurantCard from "./RestaurantCard";
-import { useState } from "react";
+import RestaurantCard, { RestaurantisOpen } from "./RestaurantCard";
+import { useContext, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import useRestaurantData from "../utils/useRestaurantData";
+import UserContext from "../utils/UserContext";
 
 const Body=()=>{
     const [searchText,setsearchText]=useState('')
     const OnlineStatus=useOnlineStatus();
     const {listofRes,setfilteredRes,filteredRes}=useRestaurantData();
+    const OpenRestaurant=RestaurantisOpen(RestaurantCard);
+    const {setUserName,loggedUser}=useContext(UserContext);
     console.log(listofRes,filteredRes)
     console.log('body render')
     if(OnlineStatus===false){
@@ -31,13 +34,21 @@ const Body=()=>{
                 const filterList = listofRes.filter((res) => res.info.avgRating > 4.0);
                 setfilteredRes(filterList);
             }}>Top Rated Restaurants (4.0+)</button>
+            <label>UserName:</label>
+            <input type="text" className='border border-solid border-black w-96 rounded-lg'
+            value={loggedUser} onChange={(e)=>{
+              setUserName(e.target.value)
+            }}/>
           </div>
            
         </div>
         <div className="flex flex-wrap px-32">
           {
             filteredRes.map((e)=>(            
-              <Link key={e.info.id} to={'/restaurants/'+e.info.id}><RestaurantCard  resData={e} /></Link>
+              <Link key={e.info.id} to={'/restaurants/'+e.info.id}>
+              {/* {HOC condition applied header} */}
+              {e.info.id ? <OpenRestaurant resData={e}/> : <RestaurantCard  resData={e} />}
+                </Link>
             ))
           }
         </div>

@@ -1,11 +1,13 @@
-import {  useState } from "react";
+import {  useContext, useState } from "react";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Header=()=>{
     const [btnName,setbtnName]=useState('Login');
     const OnlineStatus=useOnlineStatus();
+    const {loggedUser}=useContext(UserContext)
     console.log('header render') //=>the Header component re-renders and the value of btnName changes as setbtnName is set to Logout
     return(
         <div className="flex justify-between bg-orange-400 shadow-lg m-2 rounded-3xl">
@@ -31,6 +33,9 @@ const Header=()=>{
                     <button className="login" onClick={()=>{
                         (btnName==='Login') ? setbtnName("Logout") : setbtnName('Login') //toggle login to logout and vice-versa 
                     }}>{btnName}</button>
+                    <li className=" px-4">
+                        <h2 className=" font-bold">{loggedUser}</h2>
+                    </li>
                 </ul>
             </div>
         </div>
