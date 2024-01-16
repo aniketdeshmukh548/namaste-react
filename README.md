@@ -32,3 +32,12 @@ Two types of import / export
 //REACT LIFECYCLE DIAGRAM LINK AND IMAGE
 https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
   ![Alt text](image.png)
+
+# Building store
+  - Install @redux.js/toolkit [npm install @reduxjs/toolkit] and react-redux [npm install react-redux].
+  - Build Store and connect to app.
+  - create SLice (Cart Slice)
+  - dispatch action
+  - read data using selector
+//Redux Store
+  ![Alt text](image-1.png)

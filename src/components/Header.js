@@ -3,16 +3,19 @@ import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Header=()=>{
     const [btnName,setbtnName]=useState('Login');
     const OnlineStatus=useOnlineStatus();
     const {loggedUser}=useContext(UserContext)
     console.log('header render') //=>the Header component re-renders and the value of btnName changes as setbtnName is set to Logout
+    const cartItems=useSelector((store)=>store.cart.items);
+    console.log(cartItems)
     return(
         <div className="flex justify-between bg-orange-400 shadow-lg m-2 rounded-3xl">
             <div className="logo-container">
-                <a href="/"><img className="w-60 h-27 rounded-full overflow-hidden" src={LOGO_URL} alt="" /></a>
+                <Link to='/'><img className="w-60 h-27 rounded-full overflow-hidden" src={LOGO_URL} alt="" /></Link>
             </div>
             <div className="flex items-center">
                 <ul className="flex p-4 m-4">
@@ -29,7 +32,9 @@ const Header=()=>{
                     <li className="px-4">
                         <Link to='/grocery'>Grocery</Link>
                     </li>
-                    <li className="px-4">Cart🛒</li>
+                    <li className="px-4">
+                        <Link to='/cart'>Cart🛒-({cartItems.length})</Link>
+                    </li>
                     <button className="login" onClick={()=>{
                         (btnName==='Login') ? setbtnName("Logout") : setbtnName('Login') //toggle login to logout and vice-versa 
                     }}>{btnName}</button>

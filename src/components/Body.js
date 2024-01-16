@@ -34,8 +34,8 @@ const Body=()=>{
                 const filterList = listofRes.filter((res) => res.info.avgRating > 4.0);
                 setfilteredRes(filterList);
             }}>Top Rated Restaurants (4.0+)</button>
-            <label>UserName:</label>
-            <input type="text" className='border border-solid border-black w-96 rounded-lg'
+            <label className="px-4 py-2 m-2 bg-gray-400 rounded-3xl font-semibold">UserName:</label>
+            <input type="text" className='border border-solid border-black w-56cls rounded-lg'
             value={loggedUser} onChange={(e)=>{
               setUserName(e.target.value)
             }}/>

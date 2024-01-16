@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { json } from "react-router-dom";
 const User=()=>{
     // const [count]=useState(0)
     // const [count2]=useState(2)
