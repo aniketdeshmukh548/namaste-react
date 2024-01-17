@@ -1,13 +1,15 @@
 import { useDispatch, useSelector } from "react-redux";
 import ItemList from "./ItemList";
-import { clearCart } from "../utils/cartSlice";
-import { Link } from "react-router-dom";
+import { clearCart, removeItem } from "../utils/cartSlice";
 import { CART_EMPTY } from "../utils/constants";
 
 
 const Cart=()=>{
     const cartItems=useSelector((store)=>store.cart.items);
     const dispatch=useDispatch()
+    const removeHandler=(item)=>{
+        dispatch(removeItem(item))
+    }
     const clearHandle=()=>{
         dispatch(clearCart())
     }
@@ -25,7 +27,7 @@ const Cart=()=>{
             )}
             <button className="ml-2 bg-orange-500 text-white rounded-lg" onClick={clearHandle}>Clear Cart</button>
             <div className=" w-1/2 m-auto border border-solid border-l-gray-400 shadow-lg">
-                <ItemList list={cartItems}/>
+                <ItemList remove={removeHandler} list={cartItems} isCartpage={true}/>
             </div>
             <div className=" w-1/2 my-1 m-auto border border-solid border-l-gray-400 bg-orange-200 shadow-lg">
                 <span>Checkout</span>

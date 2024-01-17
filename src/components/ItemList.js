@@ -2,11 +2,12 @@ import { useDispatch } from "react-redux";
 import { CDN_URL } from "../utils/constants";
 import { addItem } from "../utils/cartSlice";
 
-const ItemList=({list})=>{
+const ItemList=({list,remove,isCartpage})=>{
     const dispatch=useDispatch()
     const handleClick=(item)=>{
         dispatch(addItem((item)))
     }
+    console.log(remove)
     console.log(list)
     return(
         <div>
@@ -21,8 +22,9 @@ const ItemList=({list})=>{
                     <p className=" text-xs">{item.card.info.description}</p>
                     </div>
                     <div className=" w-3/12 p-4">
-                        <div className=" absolute">
-                            <button className=" bg-white text-green-500 p-2 shadow-lg mx-12 rounded-lg" onClick={()=>handleClick(item)}>ADD+</button>
+                        <div className=" absolute flex flex-col space-y-10">
+                            <button className=" bg-black text-white shadow-lg font-extrabold text-2xl -mx-8 rounded-lg" onClick={()=>handleClick(item)}>+</button>
+                            {isCartpage && <button className=" bg-black text-white font-extrabold text-2xl shadow-lg -mx-8 rounded-lg"  onClick={()=>{remove(item)}}>−</button>}
                         </div>
                     <img className=" w-full h-full" src={CDN_URL+item.card.info.imageId} alt="" />
                     </div>

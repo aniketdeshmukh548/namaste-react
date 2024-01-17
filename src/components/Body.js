@@ -12,6 +12,17 @@ const Body=()=>{
     const {listofRes,setfilteredRes,filteredRes}=useRestaurantData();
     const OpenRestaurant=RestaurantisOpen(RestaurantCard);
     const {setUserName,loggedUser}=useContext(UserContext);
+    const [topRatedclicked,settopRatedclicked]=useState(false);
+    const handleTopratedclick=()=>{
+      if (topRatedclicked) {
+        setfilteredRes(listofRes);
+        settopRatedclicked(false);
+      } else {
+        const filterList = listofRes.filter((res) => res.info.avgRating > 4.0);
+        setfilteredRes(filterList);
+        settopRatedclicked(true);
+      }
+    }
     console.log(listofRes,filteredRes)
     console.log('body render')
     if(OnlineStatus===false){
@@ -30,10 +41,8 @@ const Body=()=>{
                 const filterRes = listofRes.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase()));
                 setfilteredRes(filterRes);
             }}>Serach</button>
-            <button className="px-4 py-2 m-8 bg-gray-400 rounded-3xl font-semibold" onClick={()=>{
-                const filterList = listofRes.filter((res) => res.info.avgRating > 4.0);
-                setfilteredRes(filterList);
-            }}>Top Rated Restaurants (4.0+)</button>
+            
+            <button className="px-4 py-2 m-8 bg-gray-400 rounded-3xl font-semibold" onClick={handleTopratedclick}>Top Rated Restaurants (4.0+)</button>
             <label className="px-4 py-2 m-2 bg-gray-400 rounded-3xl font-semibold">UserName:</label>
             <input type="text" className='border border-solid border-black w-56cls rounded-lg'
             value={loggedUser} onChange={(e)=>{
