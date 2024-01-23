@@ -13,18 +13,21 @@ const Body=()=>{
     const OpenRestaurant=RestaurantisOpen(RestaurantCard);
     const {setUserName,loggedUser}=useContext(UserContext);
     const [topRatedclicked,settopRatedclicked]=useState(false);
+    const [text,setText]=useState('Top Rated Restaurants (4.0+)')
     const handleTopratedclick=()=>{
       if (topRatedclicked) {
         setfilteredRes(listofRes);
         settopRatedclicked(false);
+        setText("Top Rated Restaurants (4.0+)")
       } else {
         const filterList = listofRes.filter((res) => res.info.avgRating > 4.0);
         setfilteredRes(filterList);
         settopRatedclicked(true);
+        setText("See All Restaurants")
       }
     }
-    console.log(listofRes,filteredRes)
-    console.log('body render')
+   // console.log(listofRes,filteredRes)
+    //console.log('body render')
     if(OnlineStatus===false){
       return(
       <h1>Looks you are offline. Please check your internet connection</h1>
@@ -34,7 +37,7 @@ const Body=()=>{
         <div className="body">
         <div className="filter flex justify-center">
           <div className="p-4 m-8 ">
-            <input type="text" placeholder="Search food and restaurants" className='border border-solid border-black w-96 rounded-lg' value={searchText} onChange={(e)=>{
+            <input data-testid="searchInput" type="text" placeholder="Search food and restaurants" className='border border-solid border-black w-96 rounded-lg' value={searchText} onChange={(e)=>{
               setsearchText(e.target.value);
             }}/>
             <button className="px-4 py-2 m-8 bg-gray-400 rounded-3xl font-semibold" onClick={()=>{
@@ -42,9 +45,9 @@ const Body=()=>{
                 setfilteredRes(filterRes);
             }}>Serach</button>
             
-            <button className="px-4 py-2 m-8 bg-gray-400 rounded-3xl font-semibold" onClick={handleTopratedclick}>Top Rated Restaurants (4.0+)</button>
+            <button className="px-4 py-2 m-8 bg-gray-400 rounded-3xl font-semibold" onClick={handleTopratedclick}>{text}</button>
             <label className="px-4 py-2 m-2 bg-gray-400 rounded-3xl font-semibold">UserName:</label>
-            <input type="text" className='border border-solid border-black w-56cls rounded-lg'
+            <input type="text" className='border border-solid border-black w-56cls rounded-lg' placeholder="Write Your name it will appear in header"
             value={loggedUser} onChange={(e)=>{
               setUserName(e.target.value)
             }}/>

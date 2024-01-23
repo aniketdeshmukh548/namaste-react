@@ -13,7 +13,7 @@ const Cart=()=>{
     const clearHandle=()=>{
         dispatch(clearCart())
     }
-    console.log(cartItems)
+    //console.log(cartItems)
     return(
         <div className=" text-center m-4 p-4 ">
             <h1 className="text-2xl font-bold">Cart Items</h1>

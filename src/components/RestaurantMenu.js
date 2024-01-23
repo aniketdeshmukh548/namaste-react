@@ -9,7 +9,7 @@ const RestaurantMenu = () => {
     const {resId}= useParams();
     const resInfo=useRestaurantMenu(resId);
     const [showIndex,setshowIndex]=useState(null)
-    console.log(resInfo)
+    //console.log(resInfo)
     if(resInfo===null) return <Shimmer />
     const {name,cuisines,costForTwoMessage,areaName,}=resInfo?.cards[0]?.card?.card?.info
     const {message,icon}=resInfo?.cards[0]?.card?.card?.info.feeDetails

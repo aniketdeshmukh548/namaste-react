@@ -41,3 +41,8 @@ https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
   - read data using selector
 //Redux Store
   ![Alt text](image-1.png)
+
+# Testing types by developer
+  - unit testing
+  - integration testing
+  - end to end (e2e testing)

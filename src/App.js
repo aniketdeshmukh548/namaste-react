@@ -11,6 +11,7 @@ import UserContext from "./utils/UserContext";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
 import Cart from "./components/Cart";
+import Login from "./components/Login";
 
 const Grocery=lazy(()=>import("./components/Grocery"))
 const AppLayout=()=>{
@@ -19,14 +20,14 @@ const AppLayout=()=>{
     useEffect(()=>{
         //fetch username from API and set it and validate for now we use hardcoded
         const data={
-        name:'Aniket Deshmukh'
+        name:' '
         }
         setUserName(data.name)
     },[])
     return (
         <Provider store={appStore}>
             <UserContext.Provider value={{loggedUser:userName,setUserName}}>
-            <div className="App">
+            <div id="theme" className="App">
             <Header />
             <Outlet />
             </div>
@@ -44,6 +45,7 @@ const appRouter=createBrowserRouter([
     {path:'/grocery',element:<Suspense fallback={<h1>Loading....</h1>}><Grocery /></Suspense>},
     {path:'/restaurants/:resId',element:<RestaurantMenu />},
     {path:'/cart',element:<Cart />},
+    {path:'/login',element:<Login />},
     ],
     errorElement:<Error />},
 ])

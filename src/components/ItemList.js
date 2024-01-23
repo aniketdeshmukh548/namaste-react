@@ -5,10 +5,10 @@ import { addItem } from "../utils/cartSlice";
 const ItemList=({list,remove,isCartpage})=>{
     const dispatch=useDispatch()
     const handleClick=(item)=>{
-        dispatch(addItem((item)))
+        dispatch(addItem((item)));
     }
-    console.log(remove)
-    console.log(list)
+    //console.log(remove)
+    //console.log(list)
     return(
         <div>
             {list.map((item)=>(
