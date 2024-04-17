@@ -11,10 +11,10 @@ const RestaurantMenu = () => {
     const [showIndex,setshowIndex]=useState(null)
     //console.log(resInfo)
     if(resInfo===null) return <Shimmer />
-    const {name,cuisines,costForTwoMessage,areaName,}=resInfo?.cards[0]?.card?.card?.info
-    const {message,icon}=resInfo?.cards[0]?.card?.card?.info.feeDetails
-    const categories=resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c)=>c?.card?.card?.['@type']==="type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
-    //console.log(categories)
+    const {name,cuisines,costForTwoMessage,areaName,}=resInfo?.cards[2]?.card?.card?.info
+    const {message,icon}=resInfo?.cards[2]?.card?.card?.info.feeDetails
+    const categories=resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((c)=>c?.card?.card?.['@type']==="type.googleapis.com/swiggy.presentation.food.v2.ItemCategory");
+    //console.log(message)
   
   return (
       <div className='text-center'>
